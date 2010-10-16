@@ -1,10 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'spec_helper'
 
-class Foo
-  
-end
-class Bar < Foo
-end
+class Foo; end
+class Bar < Foo; end
+
 describe 'InheritFromMatcher' do
   before do
     @bar = Bar.new
