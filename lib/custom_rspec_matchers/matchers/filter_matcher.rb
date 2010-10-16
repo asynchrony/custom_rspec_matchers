@@ -9,7 +9,7 @@ module CustomRspecMatchers
       end
     
       def description
-        "include #{@filter_type.to_s} filter: #{@expected_before_filter}"
+        "include #{@filter_type.to_s} filter: #{@expected_filter}"
       end
     
       def with(options)
