@@ -7,3 +7,5 @@ RSpec.configure do |config|
   config.include CustomRspecMatchers::Matchers
   config.include ActionController
 end
+
+Dir.glob(File.dirname(__FILE__) + "/fixtures/**/*.rb").each {|f| require f}

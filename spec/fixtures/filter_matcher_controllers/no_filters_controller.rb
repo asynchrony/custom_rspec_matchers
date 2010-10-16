@@ -1,0 +1,1 @@
+class NoFiltersController < ActionController::Base ; end
