@@ -10,12 +10,7 @@ module CustomRspecMatchers
     
       def description
         "include #{@filter_type.to_s} filter: #{@expected_filter}"
-      end
-    
-      def with(options)
-        @options = options
-        self
-      end
+      end      
     
       def only_on(*only)
         @options = {:only => only}
