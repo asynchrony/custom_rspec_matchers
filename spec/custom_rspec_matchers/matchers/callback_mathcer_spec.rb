@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe 'CallbackMatcher' do
   before do
-    @bar = Ohno.new
     @type = :save
     @on = :before
     @method = :method
