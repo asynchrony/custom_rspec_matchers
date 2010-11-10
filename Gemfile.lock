@@ -54,6 +54,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack
+  activemodel
   jeweler
   rake
   rspec (~> 2.0)
