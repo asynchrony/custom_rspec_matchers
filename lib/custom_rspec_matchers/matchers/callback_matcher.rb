@@ -8,57 +8,53 @@ module CustomRspecMatchers
       end
     
       def matches?(model)
-        @callbacks = model.send("_#{@callback_on}_callbacks")
-        if @type
-          @callbacks = @callbacks.find_all {|cb| cb.kind == @kind}
-        end
-        @callbacks.any? {|cb| cb.raw_filter == @method}
+        @callbacks = model.send("_#{@callback_on}_callbacks").find_all {|cb| cb.kind == @kind && cb.raw_filter == @method}
+        @callbacks.size == 1
       end
     
       def description
-        " has #{@kind}_#{@callback_on} callback #{@method}"
+        " has #{@kind}_#{@callback_on} callback on #{@method}"
       end
     
       def failure_message
-        msg = " expected to have a #{@kind}_#{@callback_on} callback #{@method}"
-        msg + " not found in #{@callbacks.map {|cb| {:method => cb.raw_filter, :type => cb.kind}}}"
+        msg = " expected to have #{@kind}_#{@callback_on} callback on #{@method}"
       end
     end
     
     def have_after_create_callback(method)
-      ActiveModelCallbackMatcher.new(:after, :create, method)
+      CallbackMatcher.new(:after, :create, method)
     end
     
     def have_before_create_callback(method)
-      ActiveModelCallbackMatcher.new(:before, :create, method)
+      CallbackMatcher.new(:before, :create, method)
     end
     
     def have_around_create_callback(method)
-      ActiveModelCallbackMatcher.new(:around, :create, method)
+      CallbackMatcher.new(:around, :create, method)
     end
     
     def have_after_save_callback(method)
-      ActiveModelCallbackMatcher.new(:after, :save, method)
+      CallbackMatcher.new(:after, :save, method)
     end
     
     def have_before_save_callback(method)
-      ActiveModelCallbackMatcher.new(:before, :save, method)
+      CallbackMatcher.new(:before, :save, method)
     end
     
     def have_around_save_callback(method)
-      ActiveModelCallbackMatcher.new(:around, :save, method)
+      CallbackMatcher.new(:around, :save, method)
     end
     
     def have_after_update_callback(method)
-      ActiveModelCallbackMatcher.new(:after, :update, method)
+      CallbackMatcher.new(:after, :update, method)
     end
     
     def have_before_update_callback(method)
-      ActiveModelCallbackMatcher.new(:before, :update, method)
+      CallbackMatcher.new(:before, :update, method)
     end
     
     def have_around_update_callback(method)
-      ActiveModelCallbackMatcher.new(:around, :update, method)
+      CallbackMatcher.new(:around, :update, method)
     end
   end
 end

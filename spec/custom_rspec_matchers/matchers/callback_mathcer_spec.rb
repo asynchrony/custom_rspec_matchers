@@ -8,5 +8,6 @@ describe 'CallbackMatcher' do
     @method = :method
     @to = CustomRspecMatchers::Matchers::CallbackMatcher.new(@on, @type, @method)
   end
-  it { @to.description.should == " has #{@on}_#{@type} callback #{@method}"}
+  it { @to.description.should == " has #{@on}_#{@type} callback on #{@method}"}
+  it { @to.failure_message.should == " expected to have #{@on}_#{@type} callback on #{@method}" }
 end
