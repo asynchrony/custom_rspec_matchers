@@ -21,3 +21,7 @@ pkg
 ## PROJECT::SPECIFIC
 .project
 .redcar
+
+pkg/*
+*.gem
+.bundle
