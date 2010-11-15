@@ -21,6 +21,30 @@ module CustomRspecMatchers
       end
     end
     
+    def have_after_validation_callback(method)
+      CallbackMatcher.new(:after, :validation, method)
+    end
+    
+    def have_before_validation_callback(method)
+      CallbackMatcher.new(:before, :validation, method)
+    end
+    
+    def have_after_validation_on_create_callback(method)
+      CallbackMatcher.new(:after, :validation_on_create, method)
+    end
+    
+    def have_before_validation_on_create_callback(method)
+      CallbackMatcher.new(:before, :validation_on_create, method)
+    end
+    
+    def have_after_validation_on_update_callback(method)
+      CallbackMatcher.new(:after, :validation_on_update, method)
+    end
+    
+    def have_before_validation_on_update_callback(method)
+      CallbackMatcher.new(:before, :validation_on_update, method)
+    end
+    
     def have_after_create_callback(method)
       CallbackMatcher.new(:after, :create, method)
     end

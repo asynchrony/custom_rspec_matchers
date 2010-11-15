@@ -14,4 +14,13 @@ describe Duck do
   it { should have_around_update_callback(:around_update_callback) }
   it { should have_before_update_callback(:before_update_callback) }
 
+  it { should have_after_validation_callback(:after_validation_callback) }
+  it { should have_before_validation_callback(:before_validation_callback) }
+  
+  it { should have_after_validation_on_create_callback(:after_validation_on_create_callback) }
+  it { should have_before_validation_on_create_callback(:before_validation_on_create_callback) }
+
+  it { should have_after_validation_on_update_callback(:after_validation_on_update_callback) }
+  it { should have_before_validation_on_update_callback(:before_validation_on_update_callback) }
+
 end
