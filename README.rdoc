@@ -1,6 +1,46 @@
 = custom_rspec_matchers
 
-Description goes here.
+This project contains a few custom rspec matchers that we have built to help us with our project.
+
+== Active Model Callback Examples
+
+  describe Duck do
+	
+    it { should have_after_create_callback(:after_create_callback) }
+	it { should have_around_create_callback(:around_create_callback) }
+	it { should have_before_create_callback(:before_create_callback) }
+	  
+	it { should have_after_save_callback(:after_save_callback) }
+	it { should have_around_save_callback(:around_save_callback) }
+	it { should have_before_save_callback(:before_save_callback) }
+	  
+	it { should have_after_update_callback(:after_update_callback) }
+	it { should have_around_update_callback(:around_update_callback) }
+	it { should have_before_update_callback(:before_update_callback) }
+	
+  end
+
+
+== Action Controller Filter Examples
+  
+  # checks for an after filter that does not specify the only or except option
+  it { should include_after_filter(:for_all_methods) }
+  
+  # checks for an after filter that specifies the only option
+  it { should include_after_filter(:after_filter_only_create).only_on(:create) }
+  
+  # checks for an after filter that specifies the only option with more than one methods
+  it { should include_after_filter(:after_filter_only_show_and_create).only_on([:show, :create]) }
+
+  # checks for an after filter with except specified for one method
+  it { should include_after_filter(:after_filter_except_create).except_on(:create) }
+  
+  # checks for an after filter with except specified for more than one method 
+  it { should include_after_filter(:after_filter_except_show_and_create).except_on([:show, :create]) }
+  
+  # also works for before filter
+  it { should include_before_filter(:before_filter_only_show_and_create).only_on([:show, :create]) }
+  it { should include_before_filter(:before_filter_except_show_and_create).except_on([:show, :create]) }
 
 == Note on Patches/Pull Requests
  
@@ -10,7 +50,6 @@ Description goes here.
   future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
 
 == Copyright
 
