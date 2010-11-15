@@ -63,12 +63,22 @@ module CustomRspecMatchers
       end
     end
     
-    def include_before_filter(expected_filter)
+    def have_before_filter(expected_filter)
       FilterMatcher.new :before, expected_filter
     end
+
+    def include_before_filter(expected_filter)
+      RSpec.deprecate("include_before_filter","have_before_filter")
+      have_before_filter(expected_filter)
+    end  
+    
+    def have_after_filter(expected_filter)
+      FilterMatcher.new :after, expected_filter
+    end  
     
     def include_after_filter(expected_filter)
-      FilterMatcher.new :after, expected_filter
-    end    
+      RSpec.deprecate("include_after_filter","have_after_filter")
+      have_after_filter(expected_filter)
+    end  
   end
 end

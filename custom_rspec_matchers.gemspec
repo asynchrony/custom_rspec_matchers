@@ -3,11 +3,11 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "custom_rspec_matchers"
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["kenny ortmann", "matt simpson", "amos king"]
   s.email       = ['kenny.ortmann@gmail.com', 'matt.simpson@asolutions.com', 'amos.king@asolutions.com']
-  s.homepage    = ""
+  s.homepage    = "https://github.com/asynchrony/custom_rspec_matchers"
   s.summary     = %q{a few custom rspec matchers we have created to help with testing}
   s.description = %q{custopm rspec mathcers }
 

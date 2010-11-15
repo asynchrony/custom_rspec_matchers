@@ -62,7 +62,7 @@ describe 'FilterMatcher' do
       it "has the correct failure message" do
         @matcher.failure_message.should == ""
       end
-      it { @controller.should include_before_filter(:another_before_filter) }
+      it { @controller.should have_before_filter(:another_before_filter) }
     end
   end
 end
