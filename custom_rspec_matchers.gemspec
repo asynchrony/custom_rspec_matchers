@@ -6,10 +6,10 @@ Gem::Specification.new do |s|
   s.version     = '0.0.3'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["kenny ortmann", "matt simpson", "amos king"]
-  s.email       = ['kenny.ortmann@gmail.com', 'matt.simpson@asolutions.com', 'amos.king@asolutions.com']
+  s.email       = ['kenny.ortmann@gmail.com', 'matt.simpson3@gmail.com', 'amos.king@asolutions.com']
   s.homepage    = "https://github.com/asynchrony/custom_rspec_matchers"
   s.summary     = %q{a few custom rspec matchers we have created to help with testing}
-  s.description = %q{custopm rspec mathcers }
+  s.description = %q{custopm rspec matchers }
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
