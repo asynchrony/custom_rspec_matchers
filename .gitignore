@@ -21,6 +21,7 @@ pkg
 ## PROJECT::SPECIFIC
 .project
 .redcar
+.idea
 
 pkg/*
 *.gem
