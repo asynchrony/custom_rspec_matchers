@@ -1,7 +1,6 @@
 RSpec::Matchers.define :have_mounted_uploader_for do |expected|
   match do |actual_instance|
     @actual_class = actual_instance.class
-    debugger
     matches_column? and matches_uploader? and matches_mount_point?
   end
 
