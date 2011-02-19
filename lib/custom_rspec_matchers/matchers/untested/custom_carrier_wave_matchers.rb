@@ -1,6 +1,7 @@
 RSpec::Matchers.define :have_mounted_uploader_for do |expected|
   match do |actual_instance|
     @actual_class = actual_instance.class
+    debugger
     matches_column? and matches_uploader? and matches_mount_point?
   end
 
@@ -40,11 +41,15 @@ RSpec::Matchers.define :have_mounted_uploader_for do |expected|
   end
 
   define_method :expected_mount_point do
-    @mounted_on ? @mounted_on : "#{expected}_filename"
+    @mounted_on || default_mount_point
   end
 
   define_method :actual_mount_point do
-    @actual_class.uploader_options[expected][:mount_on]
+    @actual_class.uploader_options[expected][:mount_on] || default_mount_point
+  end
+
+  define_method :default_mount_point do
+    "#{expected}_filename"
   end
 
   define_method :actual_uploader_type do
