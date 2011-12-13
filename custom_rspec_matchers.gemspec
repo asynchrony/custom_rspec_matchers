@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "custom_rspec_matchers"
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["kenny ortmann", "matt simpson", "amos king"]
   s.email       = ['kenny.ortmann@gmail.com', 'matt.simpson3@gmail.com', 'amos.king@asolutions.com']
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.add_dependency('rake')
   s.add_dependency('rspec', '~>2.0')
-  s.add_dependency('actionpack', '~>3.0')
-  s.add_dependency('activemodel', '~>3.0')
+  s.add_dependency('actionpack', '~>3.1')
+  s.add_dependency('activemodel', '~>3.1')
 
 end

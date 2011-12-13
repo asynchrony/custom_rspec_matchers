@@ -20,7 +20,7 @@ module ValidatorMatchers
   end
 
   def validate_length_of(attribute)
-    ValidatorMatcher.new(attribute, :length).tokenizer(ActiveModel::Validations::LengthValidator::DEFAULT_TOKENIZER)
+    ValidatorMatcher.new(attribute, :length)
   end
 
   class ValidatorMatcher
